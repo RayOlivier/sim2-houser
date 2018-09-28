@@ -1,0 +1,16 @@
+.whole-dash {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.dash-top {
+  display: flex;
+  width: 90%;
+  padding: 20px;
+  font-size: 42px;
+  justify-content: space-between;
+  border-bottom: black solid 1px;
+}

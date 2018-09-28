@@ -8,52 +8,61 @@ import {
   updateState,
   updateZip
 } from "../../../ducks/reducer"
+import "../Wizard.css"
 
 class StepOne extends Component {
   render() {
     console.log("this.props", this.props)
     return (
-      <div>
-        <h3>Step One: Add New Listing</h3>
-        <div>
+      <div className="step-one">
+        {/* <h3></h3> */}
+        <div className="input">
           Property Name:
           <input
             placeholder="Property Name..."
             onChange={(e) => this.props.updateName(e.target.value)}
+            value={this.props.name}
           />
         </div>
-        <div>
-          Address:
+        <div className="input">
+          <div>Address:</div>
           <input
             placeholder="Address..."
             onChange={(e) => this.props.updateAddress(e.target.value)}
+            value={this.props.address}
           />
         </div>
-        <div>
-          City:
-          <input
-            placeholder="City..."
-            onChange={(e) => this.props.updateCity(e.target.value)}
-          />
+        <div className="last-inputs">
+          <div className="input">
+            City:
+            <input
+              placeholder="City..."
+              onChange={(e) => this.props.updateCity(e.target.value)}
+              value={this.props.city}
+            />
+          </div>
+          <div className="input">
+            State:
+            <input
+              placeholder="State..."
+              onChange={(e) => this.props.updateState(e.target.value)}
+              value={this.props.state}
+            />
+          </div>
+          <div className="input">
+            <div>Zip:</div>
+            <input
+              placeholder="Zip..."
+              onChange={(e) => this.props.updateZip(parseInt(e.target.value))}
+              value={this.props.zip}
+            />
+          </div>
         </div>
-        <div>
-          State:
-          <input
-            placeholder="State..."
-            onChange={(e) => this.props.updateState(e.target.value)}
-          />
+        <div className="next">
+          <Link to="/wizard/step2">
+            <button>Next</button>
+          </Link>
         </div>
-        <div>
-          Zip:
-          <input
-            placeholder="Zip..."
-            onChange={(e) => this.props.updateZip(parseInt(e.target.value))}
-          />
-        </div>
-
-        <Link to="/wizard/step2">
-          <button>Next</button>
-        </Link>
       </div>
     )
   }

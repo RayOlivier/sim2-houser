@@ -16,7 +16,12 @@ class App extends Component {
         <BrowserRouter>
           <div className="App">
             <Header />
-            {routes}
+
+            <div className="idkman">
+              <div className="not-header">
+                <div className="main">{routes}</div>
+              </div>
+            </div>
           </div>
         </BrowserRouter>
       </Provider>

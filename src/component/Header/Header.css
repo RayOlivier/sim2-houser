@@ -1,12 +1,21 @@
 .header {
   background: #519872;
-  height: 10vh;
+  height: 8vh;
   color: white;
-  font-size: 32px;
+  font-size: 28px;
   display: flex;
+  font-weight: bolder;
 }
 
 .header-left {
-  margin: 50px;
+  margin-left: 25%;
   display: flex;
+  /* border: black solid 2px; */
+  width: 170px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-img {
+  height: 40px;
 }

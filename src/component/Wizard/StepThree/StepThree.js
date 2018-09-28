@@ -29,30 +29,43 @@ class StepThree extends Component {
   render() {
     return (
       <div>
-        <h3>StepThree</h3>
-        <Link to="/wizard/step2">
-          <button>Previous</button>
-        </Link>
-        <div>
-          Monthly Mortgage:
-          <input
-            placeholder="Mortgage..."
-            onChange={(e) =>
-              this.props.updateMortgage(parseFloat(e.target.value))
-            }
-          />
-        </div>
-        <div>
-          Desired Rent:
-          <input
-            placeholder="Rent..."
-            onChange={(e) => this.props.updateRent(parseFloat(e.target.value))}
-          />
+        {/* <h3>StepThree</h3> */}
+        <div className="step-one">
+          {this.props.mortgage ? (
+            <div>Recommended Rent: ${this.props.mortgage * 1.25}</div>
+          ) : (
+            <div />
+          )}
+          <div className="input">
+            Monthly Mortgage:
+            <input
+              placeholder="Mortgage..."
+              onChange={(e) =>
+                this.props.updateMortgage(parseFloat(e.target.value))
+              }
+              value={this.props.mortgage}
+            />
+          </div>
+          <div className="input">
+            Desired Rent:
+            <input
+              placeholder="Rent..."
+              onChange={(e) =>
+                this.props.updateRent(parseFloat(e.target.value))
+              }
+              value={this.props.rent}
+            />
+          </div>
         </div>
 
-        <Link to="/">
-          <button onClick={this.postHouse}>Complete</button>
-        </Link>
+        <div className="two-buttons">
+          <Link to="/wizard/step2">
+            <button>Previous</button>
+          </Link>
+          <Link to="/">
+            <button onClick={this.postHouse}>Complete</button>
+          </Link>
+        </div>
       </div>
     )
   }

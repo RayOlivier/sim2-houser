@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import House from "./House/House"
 import { Link } from "react-router-dom"
 import axios from "axios"
+import "./Dashboard.css"
 
 class Dashboard extends Component {
   constructor() {
@@ -62,11 +63,13 @@ class Dashboard extends Component {
       )
     })
     return (
-      <div>
-        <h1>Dashboard</h1>
-        <Link to="/wizard/step1">
-          <button>Add New Property</button>
-        </Link>
+      <div className="whole-dash">
+        <div className="dash-top">
+          <div>Dashboard</div>
+          <Link to="/wizard/step1">
+            <button>Add New Property</button>
+          </Link>
+        </div>
         {list}
       </div>
     )

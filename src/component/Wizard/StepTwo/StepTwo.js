@@ -6,22 +6,25 @@ import { updateImg } from "../../../ducks/reducer"
 class StepTwo extends Component {
   render() {
     return (
-      <div>
-        <h3>Step Two: Add Img</h3>
-        <div>
+      <div className="step-one">
+        {/* <h3>Step Two: Add Img</h3> */}
+        <div className="input">
           Image URL:
           <input
             placeholder="Image URL..."
             onChange={(e) => this.props.updateImg(e.target.value)}
+            value={this.props.img}
           />
         </div>
 
-        <Link to="/wizard/step1">
-          <button>Previous</button>
-        </Link>
-        <Link to="/wizard/step3">
-          <button>Next</button>
-        </Link>
+        <div className="two-buttons">
+          <Link to="/wizard/step1">
+            <button>Previous</button>
+          </Link>
+          <Link to="/wizard/step3">
+            <button>Next</button>
+          </Link>
+        </div>
       </div>
     )
   }

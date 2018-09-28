@@ -1,0 +1,35 @@
+.whole-house {
+  display: flex;
+  width: 95%;
+  height: 230px;
+  padding: 15px;
+  margin: 15px;
+  justify-content: space-between;
+  text-align: left;
+  /* border: pink 2px solid; */
+  background: #afd4b9;
+}
+
+.house-left {
+  width: 40%;
+
+  /* border: 2px black solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.house-middle {
+  height: 100%;
+  width: 25%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  justify-content: center;
+  /* border: black 2px dotted; */
+}
+
+.house-right {
+  width: 25%;
+}
