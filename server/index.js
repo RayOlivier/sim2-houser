@@ -13,4 +13,9 @@ massive(process.env.CONNECTION_STRING).then((dbInstance) => {
   app.set("db", dbInstance)
 })
 
+app.get("/api/houses", controller.getHouses)
+
+app.post("/api/house", controller.postHouse)
+app.delete("/api/house/:id", controller.deleteHouse)
+
 app.listen(port, () => console.log(`Sim 2 listening on ${port}`))

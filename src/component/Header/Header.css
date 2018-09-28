@@ -1,0 +1,12 @@
+.header {
+  background: #519872;
+  height: 10vh;
+  color: white;
+  font-size: 32px;
+  display: flex;
+}
+
+.header-left {
+  margin: 50px;
+  display: flex;
+}

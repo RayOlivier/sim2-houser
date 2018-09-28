@@ -3,6 +3,10 @@ const UPDATE_ADDRESS = "UPDATE_ADDRESS"
 const UPDATE_CITY = "UPDATE_CITY"
 const UPDATE_STATE = "UPDATE_STATE"
 const UPDATE_ZIP = "UPDATE_ZIP"
+const UPDATE_RENT = "UPDATE_RENT"
+const UPDATE_MORTGAGE = "UPDATE_MORTGAGE"
+const UPDATE_IMG = "UPDATE_IMG"
+const CLEAR = "CLEAR"
 
 export function updateName(input) {
   return {
@@ -34,13 +38,38 @@ export function updateZip(input) {
     payload: input
   }
 }
+export function updateImg(input) {
+  return {
+    type: UPDATE_IMG,
+    payload: input
+  }
+}
+export function updateMortgage(input) {
+  return {
+    type: UPDATE_MORTGAGE,
+    payload: input
+  }
+}
+export function updateRent(input) {
+  return {
+    type: UPDATE_RENT,
+    payload: input
+  }
+}
+
+export function clear() {
+  return { type: CLEAR }
+}
 
 const initialState = {
   name: "",
   address: "",
   city: "",
   state: "",
-  zip: 0
+  zip: 0,
+  img: "",
+  mortgage: 0,
+  rent: 0
 }
 
 export default function reducer(state = initialState, action) {
@@ -70,6 +99,27 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         zip: action.payload
+      }
+    case UPDATE_MORTGAGE:
+      return {
+        ...state,
+        mortgage: action.payload
+      }
+    case UPDATE_RENT:
+      return {
+        ...state,
+        rent: action.payload
+      }
+    case UPDATE_IMG:
+      return {
+        ...state,
+        img: action.payload
+      }
+
+    case CLEAR:
+      return {
+        ...state,
+        ...initialState
       }
     default:
       return state

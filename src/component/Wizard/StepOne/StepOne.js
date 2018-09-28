@@ -11,6 +11,7 @@ import {
 
 class StepOne extends Component {
   render() {
+    console.log("this.props", this.props)
     return (
       <div>
         <h3>Step One: Add New Listing</h3>
@@ -50,11 +51,9 @@ class StepOne extends Component {
           />
         </div>
 
-        {/* <Link to="/wizard/step2">
+        <Link to="/wizard/step2">
           <button>Next</button>
-        </Link> */}
-
-        <button>Complete</button>
+        </Link>
       </div>
     )
   }
